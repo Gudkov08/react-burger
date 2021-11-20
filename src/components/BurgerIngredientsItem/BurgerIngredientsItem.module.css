@@ -1,0 +1,12 @@
+.listItem {
+  list-style: none;
+  position: relative;
+  width: 272px;
+  height: 208px;
+}
+
+.imgCaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
