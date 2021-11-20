@@ -11,15 +11,15 @@ const sauces = Ingredients.filter(item => item.type === 'sauce');
 class BurgerIngredients extends React.Component {
   render() {
     const renBuns = buns.map((item, idx) => {
-      return <BurgerIngredientsItem name={item.name} price={item.price} image={item.image} />
+      return <BurgerIngredientsItem key={idx} name={item.name} price={item.price} image={item.image} />
     });
 
     const renMains = mains.map((item, idx) => {
-      return <BurgerIngredientsItem name={item.name} price={item.price} image={item.image} />
+      return <BurgerIngredientsItem key={idx} name={item.name} price={item.price} image={item.image} />
     });
 
     const renSauces = sauces.map((item, idx) => {
-      return <BurgerIngredientsItem name={item.name} price={item.price} image={item.image} />
+      return <BurgerIngredientsItem key={idx} name={item.name} price={item.price} image={item.image} />
     });
 
 

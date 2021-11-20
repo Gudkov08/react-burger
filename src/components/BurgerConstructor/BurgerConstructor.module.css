@@ -22,8 +22,7 @@
 .totalOrderWrapper {
   display: flex;
   align-items: center;
-  justify-content: end;
-  text-align: end;
+  justify-content: flex-end;
 }
 
 .bun {

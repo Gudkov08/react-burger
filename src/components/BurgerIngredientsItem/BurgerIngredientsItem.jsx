@@ -23,7 +23,7 @@ class BurgerIngredientsItem extends React.Component {
 }
 
 BurgerIngredientsItem.propTypes = {
-  image: PropTypes.element.isRequired,
+  image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired
 }
