@@ -1,0 +1,31 @@
+.list {
+  margin: 0;
+  padding: 0 16px 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1;
+  grid-column: 1fr;
+  row-gap: 16px;
+  justify-items: end;
+  max-height: 464px;
+  overflow-y: overlay;
+}
+
+.listItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+.totalOrderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bun {
+  text-align: end;
+  min-width: 536px;
+}
