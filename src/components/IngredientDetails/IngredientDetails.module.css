@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 638px;
+  height: 437px;
+}
+
+.title {
+  align-self: flex-start;
+}
+
+.facts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.factWide {
+  width: 120px;
+  height: 56px;
+}
+
+.factNarrow {
+  width: 112px;
+  height: 56px;
+}
