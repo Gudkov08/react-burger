@@ -1,21 +1,22 @@
-import React from "react";
+import React from 'react';
 import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 
-const BurgerIngredientsTab = () => {
+const BurgerIngredientsTab = React.forwardRef ((props, ref) => {
   const [current, setCurrent] = React.useState('one')
+
   return (
-    <div style={{ display: 'flex' }} className="mb-10">
-      <Tab value="Булки" active={current === 'one'} onClick={setCurrent}>
-        Булки
-      </Tab>
-      <Tab value="Соусы" active={current === 'two'} onClick={setCurrent}>
-        Соусы
-      </Tab>
-      <Tab value="Начинки" active={current === 'three'} onClick={setCurrent}>
-        Начинки
-      </Tab>
-    </div>
+      <div style={{ display: 'flex' }} className="mb-10">
+        <Tab value="Булки" active={current === 'one'} onClick={() => {setCurrent("one"); props.scroll(ref.bunsRef)} }>
+          Булки
+        </Tab>
+        <Tab value="Соусы" active={current === 'two'} onClick={() => {setCurrent("two"); props.scroll(ref.saucesRef)} } >
+          Соусы
+        </Tab>
+        <Tab value="Начинки" active={current === 'three'} onClick={() => {setCurrent("three"); props.scroll(ref.mainsRef)} }>
+          Начинки
+        </Tab>
+      </div>
   )
-}
+});
 
 export default BurgerIngredientsTab;

@@ -8,17 +8,17 @@ import {DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerConstructor = (props) => {
 
-  const renderSelectedBunTop = props.selectedBun.map((item, idx) => {
-    return <ConstructorElement key={idx} type="top" isLocked={true} text={`${item.name} (верх)`} price={item.price} thumbnail={item.image}/>
+  const renderSelectedBunTop = props.selectedBun.map((item) => {
+    return <ConstructorElement key={item._id} type="top" isLocked={true} text={`${item.name} (верх)`} price={item.price} thumbnail={item.image}/>
   });
 
-  const renderSelectedBunBottom = props.selectedBun.map((item, idx) => {
-    return <ConstructorElement key={idx} type="bottom" isLocked={true} text={`${item.name} (низ)`} price={item.price} thumbnail={item.image}/>
+  const renderSelectedBunBottom = props.selectedBun.map((item) => {
+    return <ConstructorElement key={item._id} type="bottom" isLocked={true} text={`${item.name} (низ)`} price={item.price} thumbnail={item.image}/>
   });
 
-  const renderNotBuns = props.notBuns.map((item, idx) => {
+  const renderNotBuns = props.notBuns.map((item) => {
     return (
-      <div key={idx} className={BurgerConstructorStyles.listItem}>
+      <div key={item._id} className={BurgerConstructorStyles.listItem}>
         <DragIcon type="primary" />
         <ConstructorElement text={item.name} price={item.price} thumbnail={item.image} />
       </div>
