@@ -8,15 +8,15 @@ import {DragIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerConstructor = (props) => {
 
-  const renBunKratorTop = props.bunKrator.map((item, idx) => {
+  const renderSelectedBunTop = props.selectedBun.map((item, idx) => {
     return <ConstructorElement key={idx} type="top" isLocked={true} text={`${item.name} (верх)`} price={item.price} thumbnail={item.image}/>
   });
 
-  const renBunKratorBottom = props.bunKrator.map((item, idx) => {
+  const renderSelectedBunBottom = props.selectedBun.map((item, idx) => {
     return <ConstructorElement key={idx} type="bottom" isLocked={true} text={`${item.name} (низ)`} price={item.price} thumbnail={item.image}/>
   });
 
-  const renNotBuns = props.notBuns.map((item, idx) => {
+  const renderNotBuns = props.notBuns.map((item, idx) => {
     return (
       <div key={idx} className={BurgerConstructorStyles.listItem}>
         <DragIcon type="primary" />
@@ -28,13 +28,13 @@ const BurgerConstructor = (props) => {
   return (
     <section className="mt-25 mb-13">
         <div className={`${BurgerConstructorStyles.bun} mb-4 mr-4`}>
-          {renBunKratorTop}
+          {renderSelectedBunTop}
         </div>
         <ul className={`${BurgerConstructorStyles.list}`}>
-          {renNotBuns}
+          {renderNotBuns}
         </ul>
         <div className={`${BurgerConstructorStyles.bun} mt-4 mr-4`}>
-          {renBunKratorBottom}
+          {renderSelectedBunBottom}
         </div>
       <div className={`${BurgerConstructorStyles.totalOrderWrapper} mt-10 pr-4`} >
         <span className="text text_type_digits-medium mr-2">610</span>

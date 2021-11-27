@@ -5,15 +5,15 @@ import BurgerIngredientsItem from "../BurgerIngredientsItem/BurgerIngredientsIte
 
 function BurgerIngredients(props) {
 
-  const renBuns = props.buns.map((item, idx) => {
+  const renderBuns = props.buns.map((item) => {
     return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
-  const renMains = props.mains.map((item, idx) => {
+  const renderMains = props.mains.map((item) => {
     return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
-  const renSauces = props.sauces.map((item, idx) => {
+  const renderSauces = props.sauces.map((item) => {
     return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
@@ -22,17 +22,17 @@ function BurgerIngredients(props) {
       <h1 className="text text_type_main-large mt-10 mb-5">Соберите бургер</h1>
       <BurgerIngredientsTab />
       <div className={BurgerIngredientsStyles.content}>
-        <h2 style= {{textAlign: 'left'}} className="text text_type_main-medium mb-6">Булки</h2>
+        <h2 style= {{textAlign: 'left'}} className="text text_type_main-medium mb-6" >Булки</h2>
         <ul className={`${BurgerIngredientsStyles.list} pl-4 pr-4 mb-10`} >
-          {renBuns}
+          {renderBuns}
         </ul>
         <h2 style= {{textAlign: 'left'}} className="text text_type_main-medium mb-6">Соусы</h2>
         <ul className={`${BurgerIngredientsStyles.list} pl-4 pr-4 mb-10`}>
-          {renMains}
+          {renderMains}
         </ul>
         <h2 style= {{textAlign: 'left'}} className="text text_type_main-medium mb-6">Начинки</h2>
         <ul className={`${BurgerIngredientsStyles.list} pl-4 pr-4 mb-10`}>
-          {renSauces}
+          {renderSauces}
         </ul>
       </div>
     </section>

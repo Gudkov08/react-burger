@@ -31,17 +31,16 @@ function App() {
   const [buns, setBuns] = useState([]);
   const [mains, setMains] = useState([]);
   const [sauces, setSauces] = useState([]);
-  const [bunKrator, setBunKrator] = useState([]);
+  const [selectedBun, setSelectedBun] = useState([]);
   const [notBuns, setNotBuns] = useState([]);
 
   useEffect(() => {
     setBuns(data.filter((item) => item.type === 'bun'));
     setMains(data.filter((item) => item.type === 'main'));
     setSauces(data.filter((item) => item.type === 'sauce')); 
-    setBunKrator(data.filter((item) => item.name === 'Краторная булка N-200i'));
+    setSelectedBun(data.filter((item) => item.name === 'Краторная булка N-200i'));
     setNotBuns(data.filter((item) => item.type !== 'bun'));
   }, [data]);
-
 
   //открытие и закрытие модальных окон
   const [isOpen, setIsOpen] = useState(false);
@@ -85,15 +84,13 @@ function App() {
     }
   }
 
-
-
   //отрисовка приложения
   return (
     <>
       <AppHeader  />
       <main className={AppStyles.main}>
         <BurgerIngredients buns={buns} mains={mains} sauces={sauces} showModal={showModal} />
-        <BurgerConstructor bunKrator={bunKrator} notBuns={notBuns} showModal={showModal} />
+        <BurgerConstructor selectedBun={selectedBun} notBuns={notBuns} showModal={showModal} />
       </main>
       <ModalOverlay show={isOpen} close={closeModal} getModal={getModal}/>
     </>
