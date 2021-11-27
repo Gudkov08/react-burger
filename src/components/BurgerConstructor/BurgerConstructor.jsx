@@ -41,7 +41,7 @@ const BurgerConstructor = (props) => {
         <div className="mr-10">
           <CurrencyIcon type="primary" />
         </div>
-        <Button onClick={props.open} type="primary" size="medium" key="buttonOrder">
+        <Button onClick={() => props.showModal('orderButton')} type="primary" size="medium" key="buttonOrder">
           Оформить заказ
         </Button>
       </div>

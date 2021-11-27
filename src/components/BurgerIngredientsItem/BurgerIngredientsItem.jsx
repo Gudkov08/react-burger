@@ -6,7 +6,7 @@ import {CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
 
 function BurgerIngredientsItem(props) {
   return (
-    <li className={BurgerIngredientsItemStyles.listItem} onClick={props.open}>
+    <li className={BurgerIngredientsItemStyles.listItem} onClick={() => props.showModal('ingredient', props.id)}>
       <div style={{textAlign: 'center'}}>
         <img className="mb-1" src={props.image} alt={props.name} />
         <Counter count={1} size="default" />

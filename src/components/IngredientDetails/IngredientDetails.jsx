@@ -1,10 +1,9 @@
 import React from "react";
 import IngredientDetailsStyles from "./IngredientDetails.module.css";
-import Ingredients from "../../utils/data"
 
-const itemToModal = Ingredients[2];
+const IngredientDetails = (props) => {
+  const itemToModal = props.data.filter((item) => item._id === props.id)[0];
 
-const IngredientDetails = () => {
   return (
     <div className={`${IngredientDetailsStyles.container} mt-10 mb-15`}>
       <h3 className={`${IngredientDetailsStyles.title} text text_type_main-large`}>Детали ингредиента</h3>

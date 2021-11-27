@@ -5,6 +5,8 @@ import AppHeader from '../AppHeader/AppHeader';
 import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
 import BurgerConstructor from '../BurgerConstructor/BurgerConstructor';
 import ModalOverlay from '../ModalOverlay/ModalOverlay';
+import OrderDetails from "../OrderDetails/OrderDetails"
+import IngredientDetails from "../IngredientDetails/IngredientDetails"
 
 
 function App() {
@@ -41,30 +43,59 @@ function App() {
   }, [data]);
 
 
-  //логика модальных окон
-  const [modal, setModal] = useState(false);
-  const openModal = () => setModal(true);
-  const closeModal = () => setModal(false);
+  //открытие и закрытие модальных окон
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
   useEffect(() => {
     const closeKey = (e) => {
       if(e.key === 'Escape') {
-        setModal(false)
+        setIsOpen(false)
       }
     }
     window.addEventListener('keydown', closeKey)
   return () => window.removeEventListener('keydown', closeKey)
   },[])
 
+  //устанавливаем вариант модалки
+  const [modalVariant, setModalVariant] = useState({})
+  const setModal = (variant, id) => {  
+    setModalVariant ({
+      variant: variant,
+      id: id
+    })
+  }
+
+  const showModal = (variant, id) => {
+    openModal();
+    setModal(variant, id);
+  }
+
+  const getModal = () => { // определяет какую модалку отрендерить на основе стейта modalVariant
+    switch(modalVariant.variant) {
+      case 'orderButton':
+        return <OrderDetails />
+    
+      case 'ingredient':
+        return <IngredientDetails id={modalVariant.id} data={data}/>
+    
+      default:
+        return null
+    }
+  }
+
+
+
   //отрисовка приложения
   return (
     <>
       <AppHeader  />
       <main className={AppStyles.main}>
-        <BurgerIngredients buns={buns} mains={mains} sauces={sauces} open={openModal} />
-        <BurgerConstructor bunKrator={bunKrator} notBuns={notBuns} open={openModal} />
+        <BurgerIngredients buns={buns} mains={mains} sauces={sauces} showModal={showModal} />
+        <BurgerConstructor bunKrator={bunKrator} notBuns={notBuns} showModal={showModal} />
       </main>
-      <ModalOverlay show={modal} close={closeModal}/>
+      <ModalOverlay show={isOpen} close={closeModal} getModal={getModal}/>
     </>
   );
 }

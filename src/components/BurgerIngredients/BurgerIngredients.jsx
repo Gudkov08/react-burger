@@ -6,15 +6,15 @@ import BurgerIngredientsItem from "../BurgerIngredientsItem/BurgerIngredientsIte
 function BurgerIngredients(props) {
 
   const renBuns = props.buns.map((item, idx) => {
-    return <BurgerIngredientsItem key={item._id} name={item.name} price={item.price} image={item.image} open={props.open} />
+    return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
   const renMains = props.mains.map((item, idx) => {
-    return <BurgerIngredientsItem key={item._id} name={item.name} price={item.price} image={item.image} open={props.open} />
+    return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
   const renSauces = props.sauces.map((item, idx) => {
-    return <BurgerIngredientsItem key={item._id} name={item.name} price={item.price} image={item.image} open={props.open} />
+    return <BurgerIngredientsItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} showModal={props.showModal} />
   });
 
   return (
