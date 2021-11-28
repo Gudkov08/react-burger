@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import BurgerConstructorStyles from "./BurgerConstructor.module.css";
 import {Button} from "@ya.praktikum/react-developer-burger-ui-components";
 import {ConstructorElement} from "@ya.praktikum/react-developer-burger-ui-components";
@@ -47,6 +48,12 @@ const BurgerConstructor = (props) => {
       </div>
     </section>
   );
+}
+
+BurgerConstructor.propTypes = {
+  selectedBun: PropTypes.arrayOf(PropTypes.object).isRequired,
+  notBuns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  showModal: PropTypes.func.isRequired,
 }
 
 export default BurgerConstructor; 

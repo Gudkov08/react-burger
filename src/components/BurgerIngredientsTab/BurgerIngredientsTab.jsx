@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerIngredientsTab = React.forwardRef ((props, ref) => {
@@ -18,5 +19,9 @@ const BurgerIngredientsTab = React.forwardRef ((props, ref) => {
       </div>
   )
 });
+
+BurgerIngredientsTab.propTypes = {
+  scroll: PropTypes.func.isRequired,
+}
 
 export default BurgerIngredientsTab;

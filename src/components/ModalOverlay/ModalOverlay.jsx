@@ -1,21 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
 import ModalOverlayStyles from "./ModalOverlay.module.css";
-import Modal from '../Modal/Modal';
 
-const ModalOverlay = ( {show, close, getModal} ) => {
+const ModalOverlay = (props) => {
+  return <div className={ModalOverlayStyles.overlay} onClick={props.close} > </div>
+}
 
-  return ReactDOM.createPortal (
-    <>
-      { show ? (
-          <section className={ModalOverlayStyles.popup} onClick={close} >
-            <Modal close={close} getModal={getModal}/> 
-          </section>
-        ) : null
-      }
-    </>, 
-    document.getElementById('modals')
-  )
+ModalOverlay.propTypes = {
+  close: PropTypes.func,
 }
 
 export default ModalOverlay;

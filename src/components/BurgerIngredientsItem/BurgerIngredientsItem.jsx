@@ -21,6 +21,8 @@ function BurgerIngredientsItem(props) {
 }
 
 BurgerIngredientsItem.propTypes = {
+  showModal: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired

@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import PropTypes from 'prop-types';
 import BurgerIngredientsStyles from "./BurgerIngredients.module.css";
 import BurgerIngredientsTab from "../BurgerIngredientsTab/BurgerIngredientsTab";
 import BurgerIngredientsItem from "../BurgerIngredientsItem/BurgerIngredientsItem";
@@ -44,6 +45,13 @@ function BurgerIngredients(props) {
       </div>
     </section>
   );
+}
+
+BurgerIngredients.propTypes = {
+  buns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  mains: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sauces: PropTypes.arrayOf(PropTypes.object).isRequired,
+  showModal: PropTypes.func.isRequired,
 }
 
 export default BurgerIngredients; 
